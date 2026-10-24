@@ -1,0 +1,63 @@
+{
+  "name": "lwf-cli",
+  "version": "0.1.0",
+  "description": "Declarative, effortless deployment tool for AWS Lambda Web Functions",
+  "keywords": [
+    "aws",
+    "lambda",
+    "lambda-web",
+    "lambda-web-functions",
+    "serverless",
+    "deployment",
+    "cli",
+    "iac"
+  ],
+  "author": "irihit",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irihit/lwf-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/irihit/lwf-cli/issues"
+  },
+  "homepage": "https://github.com/irihit/lwf-cli#readme",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "lwf": "./dist/bin/lwf.js"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "!dist/**/*.test.*"
+  ],
+  "scripts": {
+    "build": "tsc && chmod +x dist/bin/lwf.js",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run test:src",
+    "test": "node --test 'dist/**/*.test.js'",
+    "test:src": "npm run build && npm test"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cloudfront": "^3.1152.0",
+    "@aws-sdk/client-iam": "^3.1152.0",
+    "@aws-sdk/client-lambda": "^3.1152.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

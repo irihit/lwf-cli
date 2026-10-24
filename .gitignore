@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# lwf artifacts
+.lwf/
+*.zip
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Operating System files
+.DS_Store
+Thumbs.db
